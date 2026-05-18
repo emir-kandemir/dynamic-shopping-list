@@ -34,6 +34,13 @@
 
       myButton.addEventListener('click', (event) => {
         event.preventDefault();
+
+        const currentVal = currentVal.myInput;
+        currentVal = '';
+
+        const listItem = document.createElement('li');
+        const spn = document.createElement('span');
+        const newButton = document.createElement('button');
       });
     </script>
   </body>
