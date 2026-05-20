@@ -35,12 +35,23 @@
       myButton.addEventListener('click', (event) => {
         event.preventDefault();
 
-        const currentVal = currentVal.myInput;
-        currentVal.myInput = '';
+        const currentVal = myInput.value;
+        myInput.value = '';
 
         const listItem = document.createElement('li');
         const spn = document.createElement('span');
         const newButton = document.createElement('button');
+
+        listItem.appendChild(spn);
+        spn.textContent = currentVal;
+        listItem.appendChild(newButton);
+        newButton.textContent = 'Delete';
+        myList.appendChild(listItem);
+
+        newButton.addEventListener('click', () => {
+          myList.removeChild(listItem);
+        });
+        myInput.focus();
       });
     </script>
   </body>
